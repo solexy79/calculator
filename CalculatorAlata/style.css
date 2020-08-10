@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+*/
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1:hsl(293, 100%, 63%);
+  --clr-primary-2: hsl(264, 100%, 61%);
+  --clr-primary-3: rgb(253, 103, 76);
+  /* grey used for paragraphs */
+  --clr-white: #fff;
+  --clr-black: #222;
+  --dark-bg:rgba(29, 31, 41, 0.85);
+  --light-bg: rgba(238, 238, 238, 0.918);
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --light-neu-shadow: 
+  -5px -5px 8px 0 rgba(255, 255, 255, .9),
+  12px 12px 12px 0 rgba(0, 0, 0, 0.03);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-neu-shadow:
+  -5px -5px 15px 0 rgba(73, 73, 73, 0.8),
+    12px 12px 12px 0 rgba(0, 0, 0, 0.03);
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  background-size: no-repeat 50%;
+  background-image: radial-gradient(circle at 29% 55%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 4%,transparent 4%, transparent 44%,transparent 44%, transparent 100%),radial-gradient(circle at 85% 89%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 52%,transparent 52%, transparent 100%),radial-gradient(circle at 6% 90%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 53%,transparent 53%, transparent 64%,transparent 64%, transparent 100%),radial-gradient(circle at 35% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 6%,transparent 6%, transparent 98%,transparent 98%, transparent 100%),radial-gradient(circle at 56% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 16%,transparent 16%, transparent 23%,transparent 23%, transparent 100%),radial-gradient(circle at 42% 0%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 3%,transparent 3%, transparent 26%,transparent 26%, transparent 100%),radial-gradient(circle at 29% 28%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 75%,transparent 75%, transparent 100%),radial-gradient(circle at 77% 21%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 35%,transparent 35%, transparent 55%,transparent 55%, transparent 100%),radial-gradient(circle at 65% 91%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 46%,transparent 46%, transparent 76%,transparent 76%, transparent 100%),linear-gradient(200deg, rgb(136,56,255),rgb(233,66,255));
+}
+
+.calculator-container{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 400px;
+  grid-template-rows: minmax(120px, auto) 1fr;
+}
+
+
+
+.calculator-screen{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  background:var(--dark-bg);
+  padding: .8rem;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.calculator-screen .previous-operand{
+  color: rgba(255,255,255);
+  font-size:1.5rem;
+}
+
+.calculator-screen .current-operand{
+  color: rgba(255,255,255);
+  font-size:2.5rem;
+}
+
+.calculator-body{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 90px);
+  background: var(--light-bg);
+}
+
+.calculator-body > button{
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  margin: .5rem;
+  box-shadow: var(--light-neu-shadow);
+  outline-color: var(--dark-bg);
+}
+
+
+.calculator-body > button:not( .span-three):not(.all-clear):hover{
+  box-shadow: none;
+  background-color: var(--clr-white);
+}
+
+.calculator-body .span-three{
+  grid-row: span 3;
+  background: var(--clr-primary-2);
+  color: var(--clr-white);
+}
+
+.calculator-body .all-clear{
+  background: var(--clr-primary-3);
+  color: var(--clr-white);
+}
+
+.calculator-body .btn-del{
+  color: var(--clr-primary-3);
+  font-size: 1.8rem;
+}
