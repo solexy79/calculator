@@ -15,7 +15,7 @@
   --clr-white: #fff;
   --clr-black: #222;
   --dark-bg:rgba(29, 31, 41, 0.85);
-  --light-bg: rgba(238, 238, 238, 0.918);
+  --light-bg: rgba(238, 238, 238);
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
@@ -104,4 +104,15 @@ body{
 .calculator-body .btn-del{
   color: var(--clr-primary-3);
   font-size: 1.8rem;
+}
+
+
+@media (max-width: 420px){
+  .calculator-container{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 320px;
+    grid-template-rows: minmax(120px, auto) 1fr;
+  }
 }
