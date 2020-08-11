@@ -15,13 +15,11 @@ class Calculator {
 
   delete(){
     this.currentOperand = this.currentOperand.toString().slice(0, -1)
-
   }
 
   appendNumber(number){
     if(number === '.' && this.currentOperand.includes('.')) return
-    this.currentOperand = this.currentOperand.toString() + number.toString();
-    
+    this.currentOperand = this.currentOperand.toString() + number.toString();  
   }
 
   chooseOperation(operation) {
@@ -32,7 +30,6 @@ class Calculator {
     this.operation = operation
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
-
   }
 
   compute(){
@@ -81,8 +78,6 @@ class Calculator {
       return integerDisplay
     }
   }
-
-
 
   updateDisplay(){
     this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)

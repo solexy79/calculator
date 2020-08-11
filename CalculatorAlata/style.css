@@ -38,6 +38,7 @@ body{
 
 .calculator-container{
   display: grid;
+  margin-top: 2rem;
   justify-content: center;
   align-content: center;
   grid-template-columns: 400px;
@@ -112,7 +113,6 @@ body{
 
 @media (max-width: 420px){
   .calculator-container{
-    margin-top: 2rem;
     grid-template-columns: 320px;
   }
   .calculator-body{
